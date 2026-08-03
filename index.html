@@ -793,40 +793,15 @@
     </button>
 
     <script src="script.js"></script>
-<!-- Start of Arivaan AI Widget -->
+
+    <!-- Start of Arivaan AI Widget -->
 <script type="text/javascript">
 (function(){
-  var allowedDomain="usaidhussain.github.io";
-  var apiUrl="https://devbotai.arivaan.com";
-  var normalize=function(value){var host=String(value||'').toLowerCase();return host.indexOf('www.')===0?host.slice(4):host;};
-  var currentDomain=normalize(window.location.hostname);
-  var allowed=normalize(allowedDomain);
-  var apiHost='';
-  try{apiHost=new URL(apiUrl).hostname.toLowerCase();}catch(e){}
-  var apiParts=apiHost.split('.');
-  var private172=apiParts[0]==='172'&&Number(apiParts[1])>=16&&Number(apiParts[1])<=31;
-  var privateApi=apiHost==='localhost'||apiHost==='127.0.0.1'||apiHost==='::1'||apiHost.indexOf('10.')===0||apiHost.indexOf('192.168.')===0||private172;
-  var domainAllowed=!!allowed&&currentDomain===allowed;
-
-  function showLocked(message){
-    var panel=document.createElement('div');
-    panel.setAttribute('role','alert');
-    panel.style.cssText='position:fixed;right:20px;bottom:20px;z-index:2147483647;width:300px;box-sizing:border-box;padding:22px;border:1px solid #ef4444;border-radius:16px;background:#0f172a;color:#fff;font-family:Arial,sans-serif;box-shadow:0 18px 45px rgba(0,0,0,.28);text-align:center';
-    var icon=document.createElement('div');icon.textContent='🔒';icon.style.cssText='font-size:38px;margin-bottom:10px';
-    var title=document.createElement('div');title.textContent='Widget Not Authorized';title.style.cssText='font-size:16px;font-weight:700;margin-bottom:8px';
-    var description=document.createElement('div');description.textContent=message;description.style.cssText='font-size:13px;line-height:1.5;color:#cbd5e1';
-    var badge=document.createElement('div');badge.textContent=currentDomain||'unknown domain';badge.style.cssText='display:inline-block;margin-top:14px;padding:5px 10px;border-radius:999px;background:#7f1d1d;color:#fecaca;font-size:11px';
-    panel.appendChild(icon);panel.appendChild(title);panel.appendChild(description);panel.appendChild(badge);document.body.appendChild(panel);
-  }
-
-  if(!domainAllowed){showLocked('This assistant is not authorized to run on this website.');return;}
-  if(privateApi){showLocked('The widget server uses a localhost or private-network URL and cannot run as a public embed.');return;}
-
   var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
   s1.async=true;
-  s1.src='https://devbotai.arivaan.com/widget.js';
+  s1.src='http://localhost:3001/widget.js';
   s1.setAttribute('data-widget-id','224d91a8-281c-4fa7-9644-9f01033e9e4f');
-  s1.setAttribute('data-api-url','https://devbotai.arivaan.com');
+  s1.setAttribute('data-api-url','http://localhost:3001');
   s1.charset='UTF-8';
   s1.setAttribute('crossorigin','anonymous');
   s0.parentNode.insertBefore(s1,s0);
